@@ -18,7 +18,7 @@ const IndexPage: NextPage = () => {
         <Image
           className={styles.imageList__bgImage}
           src={images[0]}
-          alt={''}
+          alt={'大きい画像'}
           width={960}
           height={540}
         />
@@ -28,7 +28,7 @@ const IndexPage: NextPage = () => {
               <Image
                 className={styles.imageList__smallImage}
                 src={image}
-                alt={''}
+                alt={'小さい画像'}
                 height={103}
                 width={172}
               />
