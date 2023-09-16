@@ -1,0 +1,35 @@
+@use 'lib/vars';
+
+.imageList {
+  padding: 20px vars.$sidePadding 0 vars.$sidePadding;
+
+  &__content {
+    max-width: vars.$contentWidth;
+    margin: 0 auto;
+  }
+
+  &__bgImage {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__smallImageLists {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__smallImageList {
+    width: 18%;
+  }
+
+  &__smallImage {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
