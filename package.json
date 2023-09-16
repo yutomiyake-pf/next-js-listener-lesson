@@ -12,8 +12,10 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format": "prettier --write --ignore-path .gitignore '.src/**/*.{js,jsx,ts,tsx,json}'",
-    "markuplint": "markuplint \"./src/**/*.{jsx,tsx}\""
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write --ignore-path .gitignore './src/**/*.{js,jsx,ts,tsx,json}'",
+    "markuplint": "markuplint \"./src/**/*.{jsx,tsx}\"",
+    "all": "npm run lint && npm run format && npm run markuplint && npm run typecheck"
   },
   "dependencies": {
     "@types/node": "20.6.1",
