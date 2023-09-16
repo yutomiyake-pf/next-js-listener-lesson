@@ -1,1 +1,1 @@
-### eslint/markuplint/prettierが設定してある
+### eslint/markuplint/prettier/jestが設定してある
