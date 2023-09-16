@@ -12,7 +12,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "format": "prettier --write --ignore-path .gitignore '.src/**/*.{js,jsx,ts,tsx,json}'",
+    "markuplint": "markuplint \"./src/**/*.{jsx,tsx}\""
   },
   "dependencies": {
     "@types/node": "20.6.1",
@@ -26,8 +27,11 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@markuplint/jsx-parser": "^3.9.1",
+    "@markuplint/react-spec": "^3.10.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
+    "markuplint": "^3.12.1",
     "prettier": "^3.0.3"
   }
 }
