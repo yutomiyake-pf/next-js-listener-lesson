@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FC, memo, useState } from 'react';
+import { FC, memo } from 'react';
 
 import useChangeImage from '@/lib/hooks/useChangeImage';
 import styles from '@/styles/imageList.module.scss';
