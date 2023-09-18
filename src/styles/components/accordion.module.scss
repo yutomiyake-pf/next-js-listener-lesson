@@ -17,18 +17,32 @@ $breakPoint: 600px;
     line-height: 1;
     font-weight: bold;
     margin-bottom: 50px;
+
+    @media screen and (max-width: $breakPoint) {
+      font-size: 25px;
+    }
+  }
+
+  &__list {
+    &:nth-child(1) {
+      border-top: 2px solid black;
+    }
+    cursor: pointer;
   }
 
   &__listTitle {
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    display: block;
     font-size: 25px;
     line-height: 1;
     font-weight: bold;
     padding: 40px;
     position: relative;
-    cursor: pointer;
+    border-bottom: 2px solid black;
     transition: background-color 0.3s ease-in-out;
+
+    @media screen and (max-width: $breakPoint) {
+      font-size: 20px;
+    }
 
     &::after,
     &::before {
@@ -49,9 +63,47 @@ $breakPoint: 600px;
     &:hover {
       background-color: #ffda5f;
     }
+
+    &--active {
+      background-color: #ffda5f;
+    }
   }
 
   &__menu {
     display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__definitionList {
+    max-width: 90%;
+    margin: 20px auto 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__definitionWrap {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    font-size: 18px;
+    line-height: 1.8;
+
+    @media screen and (max-width: $breakPoint) {
+      font-size: 14px;
+    }
+  }
+
+  &__definitionTerm {
+    width: 20%;
+    font-weight: bold;
+  }
+
+  &__definitionDes {
+    white-space: pre-wrap;
+    width: 80%;
   }
 }

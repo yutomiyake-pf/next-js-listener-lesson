@@ -1,4 +1,7 @@
 @use '../lib/vars';
+
+$breakPoint: 600px;
+
 .header {
   width: 100vw;
   padding: 10px vars.$sidePadding;
@@ -13,11 +16,20 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+
+    @media screen and (max-width: $breakPoint) {
+      gap: 20px;
+    }
   }
 
   &__link {
     color: black;
     font-size: 1rem;
     line-height: 1.2;
+
+    @media screen and (max-width: $breakPoint) {
+      font-size: 12px;
+      line-height: 1;
+    }
   }
 }

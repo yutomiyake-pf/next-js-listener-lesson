@@ -19,7 +19,35 @@ const AccordionPage: NextPage = () => {
       working_hours: 'フレックスタイム',
       place: '東京',
     },
+    {
+      title: 'WEB デザイナー',
+      jobDes: 'テキストテキストテキストテキスト',
+      QR: 'テキストテキストテキストテキスト',
+      skill: 'テキストテキストテキストテキスト',
+      salary_start: 500,
+      salary_end: 800,
+      vacation: '土日祝祭日、有給休暇、夏季休暇、年末年始休暇、産前産後休暇、育児休暇',
+      employment_status: '正社員 （試用期間3ヶ月）\n業務委託',
+      working_hours: 'フレックスタイム',
+      place: '東京',
+    },
+    {
+      title: 'プログラマー',
+      jobDes: 'テキストテキストテキストテキスト',
+      QR: 'テキストテキストテキストテキスト',
+      skill: 'テキストテキストテキストテキスト',
+      salary_start: 500,
+      salary_end: 800,
+      vacation: '土日祝祭日、有給休暇、夏季休暇、年末年始休暇、産前産後休暇、育児休暇',
+      employment_status: '正社員 （試用期間3ヶ月）\n業務委託',
+      working_hours: 'フレックスタイム',
+      place: '東京',
+    },
   ];
+
+  const onClickListTitle = (index: number) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
     <>
@@ -29,29 +57,60 @@ const AccordionPage: NextPage = () => {
           <h1 className={styles.accordion__title}>募集職種</h1>
           <ol>
             {accordionList.map((item, index) => (
-              <li key={item.title}>
-                <div className={styles.accordion__listTitle}>{item.title}</div>
-                <div className={styles.accordion__menu}>
-                  <dl>
-                    <dt>仕事内容</dt>
-                    <dd>{item.jobDes}</dd>
-                    <dt>応募資格</dt>
-                    <dd>{item.QR}</dd>
-                    <dt>必須スキル</dt>
-                    <dd>{item.skill}</dd>
-                    <dt>給与</dt>
-                    <dd>
-                      {`${item.salary_start} ~ ${item.salary_end}`}{' '}
-                      <small>(スキル・経験・実績により優遇)</small>
-                    </dd>
-                    <dt>休日休暇</dt>
-                    <dd>{item.vacation}</dd>
-                    <dt>雇用形態</dt>
-                    <dd>{item.employment_status}</dd>
-                    <dt>勤務時間</dt>
-                    <dd>{item.working_hours}</dd>
-                    <dt>勤務地</dt>
-                    <dd>{item.place}</dd>
+              <li key={item.title} className={styles.accordion__list}>
+                <div
+                  role='button'
+                  tabIndex={0}
+                  className={`${styles.accordion__listTitle} ${
+                    index === openIndex ? styles['accordion__listTitle--active'] : ''
+                  }`}
+                  onClick={() => onClickListTitle(index)}
+                  onKeyDown={() => onClickListTitle(index)}
+                  aria-expanded={index === openIndex}
+                >
+                  {item.title}
+                </div>
+                <div
+                  className={`${styles.accordion__menu} ${
+                    index === openIndex ? styles['accordion__menu--active'] : ''
+                  }`}
+                >
+                  <dl className={styles.accordion__definitionList}>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>仕事内容</dt>
+                      <dd className={styles.accordion__definitionDes}>{item.jobDes}</dd>
+                    </div>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>応募資格</dt>
+                      <dd className={styles.accordion__definitionDes}>{item.QR}</dd>
+                    </div>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>必須スキル</dt>
+                      <dd className={styles.accordion__definitionDes}>{item.skill}</dd>
+                    </div>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>給与</dt>
+                      <dd className={styles.accordion__definitionDes}>
+                        {`${item.salary_start} ~ ${item.salary_end}`}
+                        <small>(スキル・経験・実績により優遇)</small>
+                      </dd>
+                    </div>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>休日休暇</dt>
+                      <dd className={styles.accordion__definitionDes}>{item.vacation}</dd>
+                    </div>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>雇用形態</dt>
+                      <dd className={styles.accordion__definitionDes}>{item.employment_status}</dd>
+                    </div>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>勤務時間</dt>
+                      <dd className={styles.accordion__definitionDes}>{item.working_hours}</dd>
+                    </div>
+                    <div className={styles.accordion__definitionWrap}>
+                      <dt className={styles.accordion__definitionTerm}>勤務地</dt>
+                      <dd className={styles.accordion__definitionDes}>{item.place}</dd>
+                    </div>
                   </dl>
                 </div>
               </li>
