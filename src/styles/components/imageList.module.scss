@@ -1,10 +1,13 @@
 @use '../lib/vars';
 
+$contentWidth: 940px;
+$breakPoint: 600px;
+
 .imageList {
   padding: 20px vars.$sidePadding 0 vars.$sidePadding;
 
   &__content {
-    max-width: vars.$contentWidth;
+    max-width: $contentWidth;
     margin: 0 auto;
   }
 

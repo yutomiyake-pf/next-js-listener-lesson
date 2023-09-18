@@ -1,0 +1,57 @@
+@use '../lib/vars';
+
+$contentWidth: 920px;
+$breakPoint: 600px;
+
+.accordion {
+  width: 100vw;
+  padding: 0 vars.$sidePadding;
+
+  &__content {
+    max-width: $contentWidth;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  &__listTitle {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 25px;
+    line-height: 1;
+    font-weight: bold;
+    padding: 40px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: black;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      background-color: #ffda5f;
+    }
+  }
+
+  &__menu {
+    display: none;
+  }
+}
