@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FC, memo } from 'react';
 
 import useChangeImage from '@/lib/hooks/useChangeImage';
-import styles from '@/styles/imageList.module.scss';
+import styles from '@/styles/components/imageList.module.scss';
 
 interface Props {
   images: string[];

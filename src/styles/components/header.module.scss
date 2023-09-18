@@ -1,0 +1,22 @@
+@use '../lib/vars';
+.header {
+  width: 100vw;
+  padding: 10px vars.$sidePadding;
+
+  &__nav {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  &__lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__link {
+    color: black;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+}
