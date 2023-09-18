@@ -5,7 +5,7 @@ $breakPoint: 600px;
 
 .accordion {
   width: 100vw;
-  padding: 0 vars.$sidePadding;
+  padding: 0 vars.$sidePadding 40px vars.$sidePadding;
 
   &__content {
     max-width: $contentWidth;
