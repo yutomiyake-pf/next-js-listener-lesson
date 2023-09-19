@@ -18,6 +18,11 @@ const Header: FC = () => {
               アコーディオン
             </Link>
           </li>
+          <li>
+            <Link className={styles.header__link} href='/slick'>
+              Slick
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
